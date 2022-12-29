@@ -6,7 +6,7 @@ function padTime(time) {
 
 export default function App() {
   const [title, setTitle] = useState("Let the countdown begin!!");
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(25 * 60);
   const [isRunning, setIsRunning] = useState(false);
 
   const mins = padTime(Math.floor(timeLeft / 60));
@@ -56,27 +56,27 @@ export default function App() {
             <span className="text-8xl	text-slate-500">:</span>
             <span className="text-8xl	text-slate-500">{sec}</span>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            {/* {!isRunning && */}
+          <div className="grid grid-cols-2 gap-4">
+            {!isRunning &&
             <button
               className="gap-px rounded bg-blue-400 py-2 px-2 text-2xl text-white hover:bg-blue-300"
               onClick={startTimer}
             >
               Start
-            </button>
+            </button> }
             <button
               className="gap-px rounded bg-blue-400 py-2 px-2 text-2xl text-white hover:bg-blue-300"
               onClick={resetTimer}
             >
               Reset
             </button>
-            {/* {isRunning && */}
+            {isRunning &&
             <button
               className="gap-px rounded bg-blue-400 py-2 px-2 text-2xl text-white hover:bg-blue-300"
               onClick={stopTimer}
             >
               Stop
-            </button>
+            </button> }
           </div>
         </div>
       </div>
